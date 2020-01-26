@@ -29,7 +29,10 @@ const useStyles = makeStyles (() =>
 
 export default function ButtonAppBar (props) {
   const classes = useStyles ();
-  let isContextEmpty = props.categories.length === 0;
+  let isContextEmpty;
+  if (props.categories) {
+    isContextEmpty = props.categories.length === 0;
+  }
   let toolbar = null;
   if (!isContextEmpty) {
     toolbar = (
